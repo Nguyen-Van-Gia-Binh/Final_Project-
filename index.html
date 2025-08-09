@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link đến thư viện icon (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header: Chứa logo, menu điều hướng và các icon -->
+    <header>
+      <nav class="navbar">
+        <a href="#" class="nav-logo">My Portfolio</a>
+
+        <!-- Menu cho màn hình desktop -->
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About Me</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Certificates</a>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Các icon bên phải -->
+        <div class="nav-icons">
+          <i class="fas fa-moon theme-toggle"></i>
+          <!-- Nút hamburger cho màn hình mobile -->
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main: Phần nội dung chính của trang -->
+    <main>
+      <section class="hero">
+        <a href="#" class="github-icon-main">
+          <i class="fab fa-github"></i>
+        </a>
+        <div class="profile-picture-container">
+          <!-- Thay 'profile.jpg' bằng đường dẫn ảnh của bạn -->
+          <img
+            src="https://wagbrag.com/wp-content/uploads/2016/04/dog-1194077_1280.jpg"
+            alt="Jam Flo"
+            class="profile-picture"
+          />
+        </div>
+        <h1>Hi, I'm <span class="name">Jam Flo</span></h1>
+        <div class="role-switcher">
+          <button class="arrow-btn">&lt;</button>
+          <span class="role">Tech Enthusiast</span>
+          <button class="arrow-btn">&gt;</button>
+        </div>
+        <p class="bio">
+          A passionate software engineer specializing in web development,
+          building modern and scalable applications.
+        </p>
+        <div class="action-buttons">
+          <button class="btn btn-primary">View Projects</button>
+          <button class="btn btn-secondary">Download CV</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: Phần chân trang -->
+    <footer>
+      <p>&copy; 2025 Gia Bình. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
