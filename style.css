@@ -1,0 +1,345 @@
+/* --- Cài đặt chung & Biến màu --- */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-footer-bg: #f8f9fa;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --name-color: #007bff;
+  --role-color: #e94d5f;
+  --border-color: #dee2e6;
+  --btn-text-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Class 'dark-theme' được thêm vào body bằng JS để đổi màu */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-footer-bg: #1e1e1e;
+  --primary-color: #007bff;
+  --secondary-color: #7f8c98;
+  --name-color: #007bff;
+  --border-color: #333333;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background-color: var(--header-footer-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem; /* Giảm khoảng cách một chút */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle,
+.github-icon-main i {
+  font-size: 1.4rem; /* Điều chỉnh kích thước icon */
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover,
+.github-icon-main i:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+  display: none; /* Ẩn trên desktop */
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Main Content --- */
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.github-icon-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+}
+
+.profile-picture-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--role-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem auto;
+  padding: 6px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-color);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero h1 .name {
+  color: var(--name-color);
+}
+
+.role-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  height: 40px; /* Đặt chiều cao cố định để tránh nhảy layout */
+}
+
+.role {
+  color: var(--role-color);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.arrow-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.arrow-btn:hover {
+    background-color: var(--header-footer-bg);
+    border-color: var(--primary-color);
+}
+
+.bio {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  color: var(--secondary-color);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 12px 28px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--btn-text-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--header-footer-bg);
+    border-color: var(--text-color);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--header-footer-bg);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+/* --- Responsive Design (Breakpoint 768px) --- */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%; /* Ẩn menu ra ngoài màn hình */
+    top: 70px; /* Nằm ngay dưới header */
+    flex-direction: column;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    transition: left 0.3s ease-in-out;
+    gap: 0;
+    padding: 2rem;
+    box-shadow: 2px 0 5px var(--shadow-color);
+  }
+
+  .nav-menu.active {
+    left: 0; /* Hiện menu khi có class active */
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.3rem;
+    display: block; /* Để link chiếm toàn bộ chiều rộng */
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: var(--header-footer-bg);
+  }
+
+  .hamburger {
+    display: block; /* Hiện hamburger trên mobile */
+  }
+
+  /* Animation cho hamburger -> X */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .action-buttons {
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+  }
+
+  .btn {
+      width: 100%;
+  }
+}
